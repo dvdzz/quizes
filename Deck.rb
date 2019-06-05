@@ -13,17 +13,16 @@ end
 
 class Deck
   def initialize
-    @ranks = [*(2..10), 'hearts', 'diamonds' 'clubs', 'spades'] #@ranks stores all the ranks in an array *(2..10) is a cool shortcut and came across so I dont have to list out all the ranks.
-    @suits = ['hearts', 'diamonds', 'clubs', 'spades'] #stores all 4 suits in an array
-    @cards []   #I used an empty array that will store the newly created DeckofCards
-      
+    @ranks = [*(2..10), 'hearts', 'diamonds', 'clubs', 'spades'] #@ranks stores all the ranks in an array *(2..10) is a cool shortcut and came across so I dont have to list out all the ranks.
+      @suits = ['hearts', 'diamonds', 'clubs', 'spades'] #stores all 4 suits in an array
+        @cards = []   #I used an empty array that will store the newly created Deck
+
     @ranks.each do |rank|  #method of nested loops
       @suits.each do |suit|
         @cards << Card.new(rank, suit)
-      end
     end
+  end
       
-
   @cards.shuffle!
   end
  
@@ -31,6 +30,7 @@ class Deck
     number.times {@cards.shift.output_card} #I use the .shift  method which removes the first element from our shuffled @cards array (or many elements depending on the number dealt).
   end
 end
+
  
 deck = Deck.new
 deck.deal(7)
