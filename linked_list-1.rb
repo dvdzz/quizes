@@ -50,6 +50,6 @@ class LinkedListNode
   node3 = LinkedListNode.new(12, node2)
   
   print_values(node3)
-  puts "************"
+  puts "*****************************"
   revlist = reverse_list(node3)
   print_values(revlist)
